@@ -1,11 +1,17 @@
-import React, { useState } from "react";
-import { AreaInput, Background, Container, Input, Link, LinkText, Logo, SubmitButton, SubmitText } from "../SignIn/style";
-
+import React, { useContext, useState } from "react";
+import { AreaInput, Background, Container, Input, SubmitButton, SubmitText } from "../SignIn/style";
+import { AuthContext } from "../../contexts/auth";
 const SignUp = ({ }) => {
 
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const { signUp } = useContext(AuthContext)
+
+  function handleSignUp(){
+    signUp(email, password, nome)
+  }
 
   return (
     <Background>
@@ -15,7 +21,7 @@ const SignUp = ({ }) => {
             placeholder="Nome"
             autoCorrect={false}
             autoCapitalize="none"
-            value={email}
+            value={nome}
             onChangeText={text => setNome(text)}
           />
         </AreaInput>
@@ -40,7 +46,7 @@ const SignUp = ({ }) => {
           />
         </AreaInput>
 
-        <SubmitButton>
+        <SubmitButton onPress={handleSignUp}>
           <SubmitText>Acessar</SubmitText>
         </SubmitButton>
 

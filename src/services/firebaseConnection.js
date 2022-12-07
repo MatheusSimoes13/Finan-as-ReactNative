@@ -1,8 +1,12 @@
 import { initializeApp } from "firebase/app";
+import 'firebase/auth'
+import { getAuth } from "firebase/auth";
+import 'firebase/database'
+import { getDatabase, ref } from "firebase/database";
 
 const API_KEY = process.env.API_KEY
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyBCn5rULCr9oN4BCloB-GgeqiLtaUgluAA",
   authDomain: "reactnativefirebase-de561.firebaseapp.com",
   databaseURL: "https://reactnativefirebase-de561-default-rtdb.firebaseio.com",
   projectId: "reactnativefirebase-de561",
@@ -12,4 +16,6 @@ const firebaseConfig = {
 };
 
 // const app = initializeApp(firebaseConfig);
-const app = initializeApp(firebaseConfig)
+export const app = initializeApp(firebaseConfig)
+export const database = ref(getDatabase())
+export const auth = getAuth()

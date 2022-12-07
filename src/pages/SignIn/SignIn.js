@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AreaInput, Background, Container, Input, Link, LinkText, Logo, SubmitButton, SubmitText } from "./style";
 import { useNavigation} from '@react-navigation/native'
+import { AuthContext } from "../../contexts/auth";
 
 const SignIn = ({}) => {
 
@@ -8,6 +9,11 @@ const SignIn = ({}) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  function handleLogin(){
+  }
+
+  handleLogin()
 
   return(
     <Background>
