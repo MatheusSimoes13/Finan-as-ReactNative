@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { AreaInput, Background, Container, Input, Link, LinkText, Logo, SubmitButton, SubmitText } from "./style";
 
