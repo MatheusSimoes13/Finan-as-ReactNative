@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View } from "react-native";
 import { AreaInput, Background, Container, Input, Link, LinkText, Logo, SubmitButton, SubmitText } from "./style";
+import { useNavigation} from '@react-navigation/native'
 
 const SignIn = ({}) => {
+
+  const navigation = useNavigation()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -35,7 +37,7 @@ const SignIn = ({}) => {
           <SubmitText>Acessar</SubmitText>
         </SubmitButton>
 
-        <Link>
+        <Link onPress={() => navigation.navigate('SignUp')}>
           <LinkText>Criar uma conta!</LinkText>
         </Link>
 
