@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 import 'firebase/database'
 import { getDatabase, ref } from "firebase/database";
 
-const API_KEY = process.env.API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY
 const firebaseConfig = {
   apiKey: "AIzaSyBCn5rULCr9oN4BCloB-GgeqiLtaUgluAA",
   authDomain: "reactnativefirebase-de561.firebaseapp.com",
